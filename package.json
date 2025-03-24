@@ -1,0 +1,25 @@
+{
+  "name": "diary-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hikaritamaki1026/diary-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hikaritamaki1026/diary-app/issues"
+  },
+  "homepage": "https://github.com/hikaritamaki1026/diary-app#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
