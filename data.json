@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "date": "2025-03-24",
+    "wakeTime": "10:00",
+    "sleepTime": "23:00",
+    "meals": {
+      "breakfast": "パン",
+      "lunch": "卵",
+      "dinner": "納豆"
+    },
+    "note": "幸せ"
+  },
+  {
+    "date": "2025-03-24",
+    "meals": {}
+  }
+]

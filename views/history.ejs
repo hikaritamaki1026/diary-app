@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+  <meta charset="UTF-8">
   <title>記録一覧</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>過去の記録</h1>
-  <ul>
-    <% logs.forEach(log => { %>
-      <li>
-        <strong><%= log.date %></strong><br>
-        <%= log.activity %>
-      </li>
-    <% }) %>
-  </ul>
-  <a href="/">← 戻る</a>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h1 class="mb-4">健康日記の履歴</h1>
+    <a href="/" class="btn btn-secondary mb-4">← 戻る</a>
+
+    <% if (logs.length === 0) { %>
+      <p>まだ記録がありません。</p>
+    <% } else { %>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% logs.forEach(log => { %>
+          <div class="col">
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title"><%= log.date %></h5>
+                <p><strong>起床時間：</strong> <%= log.wakeTime %></p>
+                <p><strong>睡眠時間：</strong> <%= log.sleepTime %></p>
+                <p><strong>朝ごはん：</strong> <%= log.meals.breakfast %></p>
+                <p><strong>昼ごはん：</strong> <%= log.meals.lunch %></p>
+                <p><strong>夜ごはん：</strong> <%= log.meals.dinner %></p>
+                <p><strong>メモ：</strong><br> <%= log.note %></p>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
 </body>
 </html>

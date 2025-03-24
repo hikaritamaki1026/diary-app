@@ -15,12 +15,19 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-// 記録保存
+// 記録保存（新バージョン）
 app.post('/save', (req, res) => {
-  const { activity } = req.body;
+  const { wakeTime, sleepTime, breakfast, lunch, dinner, note } = req.body;
   const newEntry = {
-    date: new Date().toISOString(),
-    activity
+    date: new Date().toISOString().split('T')[0], // YYYY-MM-DD
+    wakeTime,
+    sleepTime,
+    meals: {
+      breakfast,
+      lunch,
+      dinner
+    },
+    note
   };
 
   let data = [];
