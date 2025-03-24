@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>記録一覧</title>
+</head>
+<body>
+  <h1>過去の記録</h1>
+  <ul>
+    <% logs.forEach(log => { %>
+      <li>
+        <strong><%= log.date %></strong><br>
+        <%= log.activity %>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">← 戻る</a>
+</body>
+</html>
